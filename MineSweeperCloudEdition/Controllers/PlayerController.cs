@@ -28,10 +28,18 @@ namespace MineSweeperCloudEdition.Controllers
         {
             if(ModelState.IsValid)
             {
+                ViewBag.Message = "Registration Successful!";
                 playerDAL.AddPlayer(objPLayer);
                 return RedirectToAction("Login");
             }
+            ViewBag.Message = "An Error occured on Registration.";
             return View(objPLayer);
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
         }
     }
 }

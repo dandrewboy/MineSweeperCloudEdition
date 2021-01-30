@@ -13,10 +13,11 @@ namespace BusinessLayer
             IEnumerable<Player> allEmployees = dbReadAllEmployees.GetAllPlayers();
             return allEmployees;
         }
-        public void AddPlayer(Player ply)
+        public bool AddPlayer(Player ply)
         {
             DatabaseManager addOnePlayer = new DatabaseManager();
             bool isSuccesful = addOnePlayer.AddPlayer(ply);
+            return isSuccesful;
         }
     }
 }
