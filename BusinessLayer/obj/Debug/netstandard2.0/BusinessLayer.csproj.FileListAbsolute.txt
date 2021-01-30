@@ -1,0 +1,12 @@
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.deps.json
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\bin\Debug\netstandard2.0\BusinessLayer.pdb
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\bin\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.csproj.CopyComplete
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\BusinessLayer\obj\Debug\netstandard2.0\BusinessLayer.pdb

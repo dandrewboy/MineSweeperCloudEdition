@@ -1,0 +1,9 @@
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.deps.json
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\bin\Debug\netstandard2.0\DataAccessLayer.pdb
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\DataAccessLayer\obj\Debug\netstandard2.0\DataAccessLayer.pdb
