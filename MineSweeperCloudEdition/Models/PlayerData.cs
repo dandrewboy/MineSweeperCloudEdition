@@ -21,5 +21,17 @@ namespace MineSweeperCloudEdition.Models
             playerDAL.AddPlayer(ply);
         }
 
+        /// <summary>
+        /// If login validation returns false, we set player id to 0, as there is no player with id -1.
+        /// </summary>
+        /// <param name="ply"></param>
+        public void ValidatePlayer(Player ply)
+        {
+            if (playerDAL.ValidatePlayer(ply) == false)
+            {
+                ply.PlayerID = -1; //realistically could do this method in one line of code.
+            }
+        }
+
     }
 }

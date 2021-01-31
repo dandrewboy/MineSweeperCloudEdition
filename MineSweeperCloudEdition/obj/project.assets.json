@@ -586,23 +586,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dandr\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\anoth\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
+      "projectUniqueName": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
       "projectName": "MineSweeperCloudEdition",
-      "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
-      "packagesPath": "C:\\Users\\dandr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\obj\\",
+      "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
+      "packagesPath": "C:\\Users\\anoth\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\dandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -616,11 +612,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -652,7 +648,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

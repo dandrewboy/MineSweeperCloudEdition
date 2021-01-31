@@ -13,7 +13,7 @@
     <span>@ViewBag.Message</span>
 }
 
-@using (Html.BeginForm("Login", "Player", FormMethod.Get))
+@using (Html.BeginForm("Login", "Player", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

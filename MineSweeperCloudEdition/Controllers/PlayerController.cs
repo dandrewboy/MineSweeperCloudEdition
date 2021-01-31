@@ -41,5 +41,21 @@ namespace MineSweeperCloudEdition.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Login([Bind] Player objPlayer)
+        {
+            playerDAL.ValidatePlayer(objPlayer);
+            if (objPlayer.PlayerID == -1)
+            {
+                ViewBag.Message = "Login Failed!"; //Does show up :)
+            }
+            else
+            {
+                ViewBag.Message = "Login Successful!"; //Will not show in time because of redirect
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
     }
 }
