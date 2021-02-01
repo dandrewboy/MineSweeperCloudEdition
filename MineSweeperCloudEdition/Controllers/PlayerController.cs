@@ -13,8 +13,7 @@ namespace MineSweeperCloudEdition.Controllers
         PlayerData playerDAL = new PlayerData();
         public IActionResult Index()
         {
-
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
