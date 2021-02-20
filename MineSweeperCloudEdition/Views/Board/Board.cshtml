@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MIlestone1Library.Cell>
+<style>
+    .game-button {
+        width: 75px;
+    }
+
+    .game-button-image {
+        width: 25px;
+    }
+
+    .button-zone {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .line-break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .button-label {
+        font-size: 8px;
+        text-align: center;
+    }
+</style>
+@*Store image names in a array*@
+<form>
+    <div class="button-zone">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            if (i % Math.Sqrt(Model.Count()) == 0)
+            {
+                <div class="line-break"></div>
+            }
+            <button class="game-button-image" type="submit" value="@Model.ElementAt(i).live" name="buttonNUmber" asp-controller="Button" asp-action="HandleButtonClick">
+
+                @*//Show the propper image according to the button state property*@
+                <div class="button-label">
+                    @Model.ElementAt(i).row,
+                    @Model.ElementAt(i).col
+                </div>
+            </button>
+        }
+    </div>
+</form>
+

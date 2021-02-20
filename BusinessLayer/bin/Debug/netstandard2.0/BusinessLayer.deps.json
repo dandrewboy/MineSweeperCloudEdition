@@ -10,6 +10,7 @@
       "BusinessLayer/1.0.0": {
         "dependencies": {
           "DataAccessLayer": "1.0.0",
+          "MIlestone1Library": "1.0.0",
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
@@ -157,6 +158,11 @@
         "runtime": {
           "DataAccessLayer.dll": {}
         }
+      },
+      "MIlestone1Library/1.0.0": {
+        "runtime": {
+          "MIlestone1Library.dll": {}
+        }
       }
     }
   },
@@ -286,6 +292,11 @@
       "hashPath": "system.text.encoding.codepages.4.6.0.nupkg.sha512"
     },
     "DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MIlestone1Library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

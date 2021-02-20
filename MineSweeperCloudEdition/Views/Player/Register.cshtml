@@ -8,14 +8,14 @@
 <h3>New PLayer</h3>
 <hr />
 
-@if (ViewBag.Message != null)
-{
-<span>@ViewBag.Message</span>
-}
-
 @using (Html.BeginForm("Register", "Player", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
+
+    @if (ViewBag.Message != null)
+    {
+        @ViewBag.Message;
+    }
 
     <div class="row">
         <div class=" = " col-md-4">

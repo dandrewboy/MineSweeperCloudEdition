@@ -33,6 +33,9 @@
             "projectReferences": {
               "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
                 "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
+              },
+              "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj": {
+                "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj"
               }
             }
           }
@@ -181,6 +184,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -201,6 +210,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj",
+        "projectName": "MIlestone1Library",
+        "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj"
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

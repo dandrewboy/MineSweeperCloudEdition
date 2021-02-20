@@ -240,6 +240,15 @@
         "runtime": {
           "bin/placeholder/DataAccessLayer.dll": {}
         }
+      },
+      "MIlestone1Library/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/MIlestone1Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MIlestone1Library.dll": {}
+        }
       }
     }
   },
@@ -955,11 +964,17 @@
       "type": "project",
       "path": "../DataAccessLayer/DataAccessLayer.csproj",
       "msbuildProject": "../DataAccessLayer/DataAccessLayer.csproj"
+    },
+    "MIlestone1Library/1.0.0": {
+      "type": "project",
+      "path": "../../MineSweeperGUI/MIlestone1Library/MIlestone1Library.csproj",
+      "msbuildProject": "../../MineSweeperGUI/MIlestone1Library/MIlestone1Library.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "DataAccessLayer >= 1.0.0",
+      "MIlestone1Library >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -996,6 +1011,9 @@
           "projectReferences": {
             "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
+            },
+            "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj": {
+              "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperGUI\\MIlestone1Library\\MIlestone1Library.csproj"
             }
           }
         }

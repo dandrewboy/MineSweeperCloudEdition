@@ -8,14 +8,11 @@
 <h3>Login</h3>
 <hr />
 
-@if (ViewBag.Message != null)
-{
-    <span>@ViewBag.Message</span>
-}
-
 @using (Html.BeginForm("Login", "Player", FormMethod.Get))
 {
     @Html.AntiForgeryToken()
+    @ViewBag.Message;
+    
 
     <div class="row">
         <div class=" = " col-md-4">

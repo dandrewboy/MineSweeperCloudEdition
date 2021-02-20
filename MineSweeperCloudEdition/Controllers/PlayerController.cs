@@ -26,13 +26,15 @@ namespace MineSweeperCloudEdition.Controllers
         [HttpPost]
         public IActionResult Register([Bind] Player objPLayer)
         {
-            if(ModelState.IsValid)
+            string success = "Registration Successful!";
+            string fail = "An Error occured on Registration.";
+            if (ModelState.IsValid)
             {
-                ViewBag.Message = "Registration Successful!";
                 playerDAL.AddPlayer(objPLayer);
+                ViewBag.Message = success;
                 return RedirectToAction("Login");
             }
-            ViewBag.Message = "An Error occured on Registration.";
+            ViewBag.Message = fail;
             return View(objPLayer);
         }
 
