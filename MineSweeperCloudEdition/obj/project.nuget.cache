@@ -1,14 +1,9 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "vTPa17Mnb7ed/4GkU5hUkmNZCS7VolS86jSnwyrDai0zSy/G0+DyjKmMaalbfquDKA/I4moyjKTwenZ2saJveg==",
-=======
-  "dgSpecHash": "irUBN3gmYTNjYuj7WhMtnL+f3LuIeuDycMm/hc6rTMFnfsuo+pGFf3d15enQGDceS3cHWWgDC6gA+flrChKMug==",
->>>>>>> abad8c36651f02063b250d93f6aecf0e1b39eb51
+  "dgSpecHash": "EVxz+6MB+6hlW7reFb8rwdb5vh8cOjEEM1tskhbgsHRyhyRiyzYMH/kL3J1MuXq+rTJus1X9+MgcZQ5JOnC3eQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
+  "projectFilePath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
   "expectedPackageFiles": [
-<<<<<<< HEAD
     "C:\\Users\\dandr\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\dandr\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\dandr\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -125,19 +120,8 @@
     "C:\\Users\\dandr\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
-=======
-    "C:\\Users\\anoth\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\microsoft.win32.registry\\4.6.0\\microsoft.win32.registry.4.6.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.6.0\\runtime.native.system.data.sqlclient.sni.4.6.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\system.data.sqlclient\\4.7.0\\system.data.sqlclient.4.7.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\system.security.accesscontrol\\4.6.0\\system.security.accesscontrol.4.6.0.nupkg.sha512",
-    "C:\\Users\\anoth\\.nuget\\packages\\system.security.principal.windows\\4.6.0\\system.security.principal.windows.4.6.0.nupkg.sha512"
->>>>>>> abad8c36651f02063b250d93f6aecf0e1b39eb51
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\dandr\\.nuget\\packages\\visioforge.dotnet.core.trial\\12.0.82\\visioforge.dotnet.core.trial.12.0.82.nupkg.sha512"
   ],
   "logs": []
 }

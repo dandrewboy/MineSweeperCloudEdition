@@ -185,3 +185,10 @@ C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\
 C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\MineSweeperCloudEdition.pdb
 C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\MineSweeperCloudEdition.genruntimeconfig.cache
 >>>>>>> abad8c36651f02063b250d93f6aecf0e1b39eb51
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Controls.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Controls.UI.Dialogs.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Controls.UI.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.MediaFramework.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Shared.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Tools.NetCore.dll
+C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\bin\Debug\net5.0\VisioForge.Types.NetCore.dll

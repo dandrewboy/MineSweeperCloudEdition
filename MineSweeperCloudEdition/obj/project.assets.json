@@ -1948,6 +1948,27 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "VisioForge.DotNet.Core.TRIAL/12.0.82": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/VisioForge.Controls.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Controls.UI.Dialogs.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Controls.UI.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.MediaFramework.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Shared.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Tools.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Types.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/VisioForge.Controls.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Controls.UI.Dialogs.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Controls.UI.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.MediaFramework.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Shared.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Tools.NetCore.dll": {},
+          "lib/netcoreapp3.1/VisioForge.Types.NetCore.dll": {}
+        }
+      },
       "BusinessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6703,6 +6724,34 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "VisioForge.DotNet.Core.TRIAL/12.0.82": {
+      "sha512": "Z4QULcHNqCgD/IyEEDkm6xGcQ96tmPKNWraj5DgcIkifbTApuci5U1Pbgljq7Ear60vYWGMC4qe/IPNCsTb8uA==",
+      "type": "package",
+      "path": "visioforge.dotnet.core.trial/12.0.82",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/VisioForge.Controls.UI.Dialogs.dll",
+        "lib/net46/VisioForge.Controls.UI.dll",
+        "lib/net46/VisioForge.Controls.dll",
+        "lib/net46/VisioForge.MediaFramework.dll",
+        "lib/net46/VisioForge.Shared.dll",
+        "lib/net46/VisioForge.Tools.dll",
+        "lib/net46/VisioForge.Types.dll",
+        "lib/netcoreapp3.1/VisioForge.Controls.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.Controls.UI.Dialogs.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.Controls.UI.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.MediaFramework.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.Shared.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.Tools.NetCore.dll",
+        "lib/netcoreapp3.1/VisioForge.Types.NetCore.dll",
+        "readme.txt",
+        "tools/VisualStudioToolsManifest.xml",
+        "visioforge.dotnet.core.trial.12.0.82.nupkg.sha512",
+        "visioforge.dotnet.core.trial.nuspec"
+      ]
+    },
     "BusinessLayer/1.0.0": {
       "type": "project",
       "path": "../BusinessLayer/BusinessLayer.csproj",
@@ -6723,23 +6772,28 @@
     "net5.0": [
       "BusinessLayer >= 1.0.0",
       "DataAccessLayer >= 1.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "VisioForge.DotNet.Core.TRIAL >= 12.0.82"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\anoth\\.nuget\\packages\\": {}
+    "C:\\Users\\dandr\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
+      "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
       "projectName": "MineSweeperCloudEdition",
-      "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
-      "packagesPath": "C:\\Users\\anoth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\obj\\",
+      "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\MineSweeperCloudEdition.csproj",
+      "packagesPath": "C:\\Users\\dandr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MineSweeperCloudEdition\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6753,11 +6807,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj"
+            "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj"
             },
-            "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
+            "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -6775,6 +6829,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "VisioForge.DotNet.Core.TRIAL": {
+            "target": "Package",
+            "version": "[12.0.82, )"
           }
         },
         "imports": [
@@ -6795,7 +6853,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

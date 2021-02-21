@@ -5,7 +5,7 @@
     }
 
     .game-button-image {
-        width: 25px;
+        width: 75px;
     }
 
     .button-zone {
@@ -24,23 +24,40 @@
     }
 </style>
 @*Store image names in a array*@
-<form>
-    <div class="button-zone">
-        @for (int i = 0; i < Model.Count(); i++)
-        {
-            if (i % Math.Sqrt(Model.Count()) == 0)
-            {
-                <div class="line-break"></div>
+<body >
+    <form>
+        @{
+            string[] numImg = { "0.png", "1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png" };
             }
-            <button class="game-button-image" type="submit" value="@Model.ElementAt(i).live" name="buttonNUmber" asp-controller="Button" asp-action="HandleButtonClick">
+          <div class="button-zone" oncontextmenu="return false;">
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    if (i % Math.Sqrt(Model.Count()) == 0)
+                    {
+                        <div class="line-break"></div>
+                    }
+                    <button class="game-button-image" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
 
-                @*//Show the propper image according to the button state property*@
-                <div class="button-label">
-                    @Model.ElementAt(i).row,
-                    @Model.ElementAt(i).col
-                </div>
-            </button>
-        }
-    </div>
-</form>
+                        @if (Model.ElementAt(i).flagged == true)
+                        {
+                            <img class="game-button-image" src="~/img/flag.png" />
+                        }
+                        else if (Model.ElementAt(i).live == true && Model.ElementAt(i).visited == true)
+                        {
+                            <img class="game-button-image" src="~/img/mine.jpg" />
+                        }
+                        else if (Model.ElementAt(i).visited == true)
+                        {
+                           <img class="game-button-image" src="~/img/@numImg[Model.ElementAt(i).liveNeighbors]" />   
+                        }
+                        else
+                        {
+                            <img class="game-button-image" src="~/img/minesweeper.jpg" />
+                        }
+                    </button>
+                }
+            </div>
+    </form>
+    @ViewBag.win
+    </body>
 

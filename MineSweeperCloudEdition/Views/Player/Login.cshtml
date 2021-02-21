@@ -1,7 +1,6 @@
 ﻿@model DataAccessLayer.Player;
 @{
     ViewData["Title"] = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -14,45 +13,39 @@
             </ul>
         </div>
     </div>
- </nav>
-    <h1>Welcome Player!</h1>
-    <h3>Login</h3>
-    <hr />
-
-<<<<<<< HEAD
-@using (Html.BeginForm("Login", "Player", FormMethod.Get))
+</nav>
+<h1>Welcome Player!</h1>
+<h3>Login</h3>
+<hr />
+@using (Html.BeginForm("Login", "Player", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    @ViewBag.Message;
-    
-=======
+    @ViewBag.Message
+
     @if (ViewBag.Message != null)
     {
         <span>@ViewBag.Message</span>
     }
+    @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm("Login", "Player", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
->>>>>>> abad8c36651f02063b250d93f6aecf0e1b39eb51
 
-        <div class="row">
-            <div class=" = " col-md-4">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Username" class="control-label"></label>
-                    <input asp-for="Username" class="form-control" />
-                    <span asp-validation-for="Username" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password" class="control-label"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Login" class="btn btn-success" />
-                </div>
+    <div class="row">
+        <div class=" = " col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password"  type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-success" />
             </div>
         </div>
+    </div>
+}
 
-    }
