@@ -12,6 +12,7 @@ namespace MIlestone1Library
         public int col { get; set; }
         public Boolean visited { get; set; } = false;
         public Boolean live { get; set; } = false;
+        public bool flagged { get; set; }
         public int liveNeighbors { get; set; } = 0;
 
         public Cell(int r, int c)

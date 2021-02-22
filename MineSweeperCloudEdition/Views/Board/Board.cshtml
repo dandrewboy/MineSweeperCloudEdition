@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<MIlestone1Library.Cell>
 <style>
     .game-button {
-        width: 75px;
+        width: 80px;
     }
 
     .game-button-image {
-        width: 75px;
+        width: 70px;
     }
 
     .button-zone {
@@ -15,7 +15,7 @@
 
     .line-break {
         flex-basis: 100%;
-        height: 0;
+        height: 0px;
     }
 
     .button-label {
@@ -36,7 +36,7 @@
                     {
                         <div class="line-break"></div>
                     }
-                    <button class="game-button-image" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
+                    <button class="game-button" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
 
                         @if (Model.ElementAt(i).flagged == true)
                         {
