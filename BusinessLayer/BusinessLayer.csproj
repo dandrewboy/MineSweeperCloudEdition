@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MineSweeperGUI\MIlestone1Library\MIlestone1Library.csproj" />
+    <ProjectReference Include="..\MIlestone1Library\MIlestone1Library.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 

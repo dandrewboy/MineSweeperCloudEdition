@@ -1,11 +1,15 @@
 ﻿@model IEnumerable<MIlestone1Library.Cell>
 <style>
     .game-button {
+<<<<<<< HEAD
         width: 85px;
+=======
+        width: 80px;
+>>>>>>> 302e91960ee637a989f7d4c0d53b68ce25e13737
     }
 
     .game-button-image {
-        width: 75px;
+        width: 70px;
     }
 
     .button-zone {
@@ -15,7 +19,7 @@
 
     .line-break {
         flex-basis: 100%;
-        height: 0;
+        height: 0px;
     }
 
     .button-label {
@@ -38,9 +42,14 @@
                     {
                         <div class="line-break"></div>
                     }
+<<<<<<< HEAD
                     @*Defines the indavidual buttons and attaches a method for handling click events*@
                     <button class="game-button" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
                         @*checks if the flagged attribute is true and sets the image of the button to flag.png*@
+=======
+                    <button class="game-button" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
+
+>>>>>>> 302e91960ee637a989f7d4c0d53b68ce25e13737
                         @if (Model.ElementAt(i).flagged == true)
                         {
                             <img class="game-button-image" src="~/img/flag.png" />

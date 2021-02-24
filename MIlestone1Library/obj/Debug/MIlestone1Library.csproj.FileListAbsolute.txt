@@ -1,0 +1,11 @@
+C:\Users\dandr\source\repos\MIlestone1Library\MIlestone1Library\bin\Debug\MIlestone1Library.dll
+C:\Users\dandr\source\repos\MIlestone1Library\MIlestone1Library\bin\Debug\MIlestone1Library.pdb
+C:\Users\dandr\source\repos\MIlestone1Library\MIlestone1Library\obj\Debug\MIlestone1Library.csprojAssemblyReference.cache
+C:\Users\dandr\source\repos\MIlestone1Library\MIlestone1Library\obj\Debug\MIlestone1Library.dll
+C:\Users\dandr\source\repos\MIlestone1Library\MIlestone1Library\obj\Debug\MIlestone1Library.pdb
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\bin\Debug\MIlestone1Library.dll
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\bin\Debug\MIlestone1Library.pdb
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\obj\Debug\MIlestone1Library.csprojAssemblyReference.cache
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\obj\Debug\MIlestone1Library.csproj.CoreCompileInputs.cache
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\obj\Debug\MIlestone1Library.dll
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MIlestone1Library\obj\Debug\MIlestone1Library.pdb

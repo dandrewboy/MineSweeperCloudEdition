@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{08799437-3B75-4D2E-A2A0-640C0CC0F1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIlestone1Library", "..\MineSweeperGUI\MIlestone1Library\MIlestone1Library.csproj", "{8FE83A4A-4305-4195-9374-1CAAB8FB56DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIlestone1Library", "MIlestone1Library\MIlestone1Library.csproj", "{8FE83A4A-4305-4195-9374-1CAAB8FB56DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
