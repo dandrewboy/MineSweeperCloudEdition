@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MIlestone1Library.Cell>
 <style>
     .game-button {
-        width: 75px;
+        width: 85px;
     }
 
     .game-button-image {
@@ -23,33 +23,39 @@
         text-align: center;
     }
 </style>
-@*Store image names in a array*@
 <body >
     <form>
         @{
+            // Image array for live neighbor number
             string[] numImg = { "0.png", "1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png" };
             }
+            @*Defines the area where the buttons will be displayed*@
           <div class="button-zone" oncontextmenu="return false;">
+              @*iterates thorugh each item in the list of cells sent to the view, making a new row once the current row is equal to the boards size*@
                 @for (int i = 0; i < Model.Count(); i++)
                 {
                     if (i % Math.Sqrt(Model.Count()) == 0)
                     {
                         <div class="line-break"></div>
                     }
-                    <button class="game-button-image" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
-
+                    @*Defines the indavidual buttons and attaches a method for handling click events*@
+                    <button class="game-button" type="submit" value="@i" name="index" asp-controller="Board" asp-action="HandleButtonClick">
+                        @*checks if the flagged attribute is true and sets the image of the button to flag.png*@
                         @if (Model.ElementAt(i).flagged == true)
                         {
                             <img class="game-button-image" src="~/img/flag.png" />
                         }
+                        @*Checks if a button is a bomb, then sets its image to mine.jpg*@
                         else if (Model.ElementAt(i).live == true && Model.ElementAt(i).visited == true)
                         {
                             <img class="game-button-image" src="~/img/mine.jpg" />
                         }
+                        @*Checks if a button isn't flagged and isn't a mine, then sets the image to a corresponding image from the array*@
                         else if (Model.ElementAt(i).visited == true)
                         {
                            <img class="game-button-image" src="~/img/@numImg[Model.ElementAt(i).liveNeighbors]" />   
                         }
+                        @*If a button isn't clicked it sets a button to the standard button image*@
                         else
                         {
                             <img class="game-button-image" src="~/img/minesweeper.jpg" />
@@ -58,6 +64,7 @@
                 }
             </div>
     </form>
+    @*Win/Lose message in a view bag*@
     @ViewBag.win
     </body>
 

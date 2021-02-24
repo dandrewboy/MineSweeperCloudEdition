@@ -8,23 +8,31 @@ namespace BusinessLayer
     public class CreateBoard
     {
         List<Cell> bombSet = new List<Cell>();
+        // sets cells to be bombs 
         public void setLiveNeighbors(Cell[,] theGrid, int Size, int difficulty)
         {
+            // Total number of bombs needing to be made
             double bombNum;
+            // A list of bombs currently made
             List<Cell> bombSet = new List<Cell>();
 
+            // radom number genreator
             var rnd = new Random();
 
+            // Switch case create bombs based on difficulty ranging from one to five, one being the easiest and five being the hardest
             switch (difficulty)
             {
                 case 1:
+                    // set number of total bombs
                     bombNum = ((Size * Size) / 10);
+                    // randomly selects cells in the array to become bombs
                     for (int i = 0; i < bombNum;)
                     {
                         int row = rnd.Next(Size);
                         int col = rnd.Next(Size);
                         Cell c = new Cell(row, col);
                         Boolean newBomb = true;
+                        // Checks if the first bomb has been made
                         if (bombSet.Count == 0)
                         {
                             theGrid[c.row, c.col].live = true;
@@ -33,6 +41,7 @@ namespace BusinessLayer
                         }
                         else
                         {
+                            // Ensures that another bomb cell is not seleceted to be made into a bomb
                             for (int j = 0; j < bombSet.Count; j++)
                             {
 
@@ -41,6 +50,7 @@ namespace BusinessLayer
                                     newBomb = false;
                                 }
                             }
+                            // adds a new bomb to the list
                             if (newBomb == true)
                             {
                                 theGrid[c.row, c.col].live = true;
@@ -51,7 +61,6 @@ namespace BusinessLayer
 
                     }
                     break;
-
                 case 2:
                     bombNum = (((Size * Size) * 1.5) / 10);
                     for (int i = 0; i < bombNum;)
@@ -186,7 +195,9 @@ namespace BusinessLayer
         }
         public void calculateLiveNeighbors(Cell[,] theGrid, int Size)
         {
+            // Variable for the current cell
             Cell currentCell;
+            // Iterates through the rows and columns and counts the surrounding bombs at the current cell and sets the liveNeighbor value to it
             for (int r = 0; r < Size; r++)
             {
                 for (int c = 0; c < Size; c++)
@@ -263,6 +274,7 @@ namespace BusinessLayer
 
         public void flagBomb(Cell[,] theGrid, int size)
         {
+            // Four checks for above, below, left, and right of a bomb
             bool check1 = false;
             bool check2 = false;
             bool check3 = false;
@@ -274,13 +286,16 @@ namespace BusinessLayer
                 {
                     if (theGrid[row, col].live == true)
                     {
+                        // Chcecks if the area above is valid
                         if (isValid(row + 1, col, size) == true) 
                         {
+                            // checks live and visited status of cell above
                             if(theGrid[row + 1, col].visited == true || theGrid[row + 1, col].live == true)
                             {
                                 check1 = true;
                             }
                         } 
+                        // chekcs if cell above is not valid
                         else if(isValid(row + 1, col, size) == false)
                         {
                             check1 = true;
@@ -321,10 +336,12 @@ namespace BusinessLayer
                         {
                             check4 = true;
                         }
+                        // if all checks are set to true flagg the bomb
                         if(check1 == true && check2 == true && check3 == true && check4 ==true)
                         {
                             theGrid[row, col].flagged = true;
                         }
+                        // reset checks to be false after confirming flagged status
                         check1 = false;
                         check2 = false;
                         check3 = false;
@@ -366,6 +383,7 @@ namespace BusinessLayer
             {
                 for (int c = 0; c < size; c++)
                 {
+                    // checks to see if any non-bomb cells are not vivited yet
                     if (cell[r, c].live == false && cell[r, c].visited == false)
                     {
                         return false;
@@ -376,6 +394,7 @@ namespace BusinessLayer
         }
         public void revealBoard(Cell[,] cell, int size)
         {
+            // revelas all the cells
             for (int row = 0; row < size; row++) {
                 for(int col = 0; col < size; col++)
                 {

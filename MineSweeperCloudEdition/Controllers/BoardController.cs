@@ -87,12 +87,14 @@ namespace MineSweeperCloudEdition.Controllers
                     }
                 }
             }
+            // checks for win condition
             if(cb.boardCheck(cells, size) == true)
             {
                 win = true;
             }
             if(lose == true)
             {
+                // reveals the board after a loss
                 cb.revealBoard(cells, size);
                 cellList = new List<Cell>();
                 for (int i = 0; i < size; i++)
@@ -102,10 +104,12 @@ namespace MineSweeperCloudEdition.Controllers
                         cellList.Add(cells[i, j]);
                     }
                 }
+                // Lose statement
                 ViewBag.win = "BOOM! You set off a bomb! You Lose!";
             }
             else if(win == true)
             {
+                // win ststement
                 ViewBag.win = "All Bomb Locations Identified! You Win!";
             }
             return View("Board", cellList);
