@@ -272,82 +272,16 @@ namespace BusinessLayer
             }
         }
 
-        public void flagBomb(Cell[,] theGrid, int size)
+        public void flagBomb(Cell cell)
         {
-            // Four checks for above, below, left, and right of a bomb
-            bool check1 = false;
-            bool check2 = false;
-            bool check3 = false;
-            bool check4 = false;
-
-            for (int row = 0; row < size; row++)
+            // Set the cells flagged propperty depending on its current state
+           if(cell.flagged == false)
             {
-                for (int col = 0; col < size; col++)
-                {
-                    if (theGrid[row, col].live == true)
-                    {
-                        // Chcecks if the area above is valid
-                        if (isValid(row + 1, col, size) == true) 
-                        {
-                            // checks live and visited status of cell above
-                            if(theGrid[row + 1, col].visited == true || theGrid[row + 1, col].live == true)
-                            {
-                                check1 = true;
-                            }
-                        } 
-                        // chekcs if cell above is not valid
-                        else if(isValid(row + 1, col, size) == false)
-                        {
-                            check1 = true;
-                        }
-                        if (isValid(row - 1, col, size) == true)
-                        {
-                            if(theGrid[row - 1, col].visited == true || theGrid[row - 1, col].live == true)
-                            {
-                                check2 = true;
-                            }
-                            
-                        }
-                        else if (isValid(row - 1, col, size) == false)
-                        {
-                            check2 = true;
-                        }
-                        if (isValid(row, col + 1, size) == true)
-                        {
-                            if (theGrid[row, col + 1].visited == true || theGrid[row, col + 1].live == true)
-                            {
-                                check3 = true;
-                            }
-                            
-                        }
-                        else if (isValid(row, col + 1, size) == false)
-                        {
-                            check3 = true;
-                        }
-                        if (isValid(row, col - 1, size) == true)
-                        {
-                            if (theGrid[row, col - 1].visited == true || theGrid[row, col - 1].live == true)
-                            {
-                                check4 = true;
-                            }
-                            
-                        }
-                        else if (isValid(row, col - 1, size) == false)
-                        {
-                            check4 = true;
-                        }
-                        // if all checks are set to true flagg the bomb
-                        if(check1 == true && check2 == true && check3 == true && check4 ==true)
-                        {
-                            theGrid[row, col].flagged = true;
-                        }
-                        // reset checks to be false after confirming flagged status
-                        check1 = false;
-                        check2 = false;
-                        check3 = false;
-                        check4 = false;
-                    }
-                }
+                cell.flagged = true;
+            } 
+            else if(cell.flagged == true)
+            {
+                cell.flagged = false;
             }
 
         }
@@ -399,7 +333,14 @@ namespace BusinessLayer
                 for(int col = 0; col < size; col++)
                 {
                     cell[row, col].visited = true;
-                    cell[row, col].flagged = false;
+                    if(cell[row, col].live == true)
+                    {
+                        cell[row, col].flagged = true;
+                    }
+                    else
+                    {
+                        cell[row, col].flagged = false;
+                    }
                 }
             }
         }

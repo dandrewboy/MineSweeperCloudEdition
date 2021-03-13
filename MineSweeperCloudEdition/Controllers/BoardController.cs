@@ -49,6 +49,32 @@ namespace MineSweeperCloudEdition.Controllers
             }
             return View("Board", cellList);
         }
+
+        public IActionResult RightClick(int index)
+        {
+            int size = (int)Math.Sqrt(cells.Length);
+            // grab selected cell
+            Cell cell = cellList.ElementAt(index);
+            //call flagBomb methond
+            if(cell.flagged == false)
+            {
+                cell.flagged = true;
+            }
+            else if(cell.flagged == true)
+            {
+                cell.flagged = false;
+            }
+            //return to view
+           cellList = new List<Cell>();
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    cellList.Add(cells[i, j]);
+                }
+            }
+            return View("Board", cellList);
+        }
         public IActionResult HandleButtonClick(int index)
         {
             // set the size of the board
@@ -74,17 +100,6 @@ namespace MineSweeperCloudEdition.Controllers
                     // set visited to true to reveal the bomb
                     cell.visited = true;
                     lose = true;
-                }
-                // Check for any stand alone bombs to be flagged
-                cb.flagBomb(cells, size);
-                // Create an updated list of cells
-                cellList = new List<Cell>();
-                for (int i = 0; i < size; i++)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        cellList.Add(cells[i, j]);
-                    }
                 }
             }
             // checks for win condition
