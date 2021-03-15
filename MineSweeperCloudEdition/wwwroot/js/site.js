@@ -7,6 +7,7 @@ $(function () {
     console.log("Page is ready.");
 
     $(document).on("click", ".game-button", function (event) {
+        document.on("click", ".game-button").disabled = true;
         event.preventDefault();
 
         var index = $(this).val();
@@ -40,6 +41,7 @@ function doButtonUpdate(index, urlString)
             },
             success: function (data)
             {
+                console.log("success");
                 console.log(data);
                 $("body").html(data);
             },
@@ -65,7 +67,8 @@ function doOneButtonUpdate(index, urlString)
             },
             success: function (data)
             {
-                console.log(data);
+                console.log("success");
+                //console.log(data);
                 $("#" + index).html(data);
             },
             error: function (jqXHR, textStatus)
