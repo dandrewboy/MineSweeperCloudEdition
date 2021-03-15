@@ -59,6 +59,10 @@
                             <img class="game-button-image" src="~/img/@numImg[Model.ElementAt(i).liveNeighbors]" />
                         }
                         @*If a button isn't clicked it sets a button to the standard button image*@
+                        else if (Model.ElementAt(i).flagged == true)
+                        {
+
+                        }
                         else
                         {
                             <img class="game-button-image" src="~/img/minesweeper.jpg" />
