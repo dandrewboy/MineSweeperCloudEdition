@@ -10,8 +10,8 @@ namespace MineSweeperCloudEdition.Models
     public class BoardModel
     {
         [Required]
-        [Range(5,25)]
-        [DisplayName("Board Size: between 5 and 25")]
+        [Range(5,13)]
+        [DisplayName("Board Size: between 5 and 13")]
         public int Size { get; set; }
         [Required]
         [Range(1,5)]
