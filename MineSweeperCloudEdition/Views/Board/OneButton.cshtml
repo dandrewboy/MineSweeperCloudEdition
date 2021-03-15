@@ -1,0 +1,14 @@
+﻿@model MIlestone1Library.Cell
+
+@*Defines the indavidual buttons and attaches a method for handling click events*@
+<button class="game-button" type="submit" value="@Model.Id" name="index" asp-controller="Board" asp-action="RightClick">
+    @*checks if the flagged attribute is true and sets the image of the button to flag.png*@
+    @if (Model.flagged == true)
+    {
+        <img class="game-button-image" src="~/img/flag.png" />
+    }
+    else
+    {
+        <img class="game-button-image" src="~/img/minesweeper.jpg" />
+    }
+</button>

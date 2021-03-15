@@ -22,7 +22,7 @@ $(document).ready(function () {
         if (e.button == 2) {
             var index = $(this).val();
             console.log("Right Mouse Click: " + index);
-            doButtonUpdate(index, "/Board/RightClick");
+            doOneButtonUpdate(index, "/Board/OneButton");
         }
     });
 });
@@ -42,6 +42,31 @@ function doButtonUpdate(index, urlString)
             {
                 console.log(data);
                 $("body").html(data);
+            },
+            error: function (jqXHR, textStatus)
+            {
+                alert("Failed");
+            }
+
+        });
+
+};
+
+function doOneButtonUpdate(index, urlString)
+{
+    $.ajax(
+        {
+            datatype: 'json',
+            method: 'POST',
+            url: urlString,
+            data:
+            {
+                "index": index
+            },
+            success: function (data)
+            {
+                console.log(data);
+                $("#" + index).html(data);
             },
             error: function (jqXHR, textStatus)
             {

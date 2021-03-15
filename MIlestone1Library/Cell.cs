@@ -8,6 +8,7 @@ namespace MIlestone1Library
 {
     public class Cell
     {
+        public int Id { get; set; }
         public int row { get; set; }
         public int col { get; set; }
         public Boolean visited { get; set; } = false;

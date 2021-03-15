@@ -333,14 +333,6 @@ namespace BusinessLayer
                 for(int col = 0; col < size; col++)
                 {
                     cell[row, col].visited = true;
-                    if(cell[row, col].live == true)
-                    {
-                        cell[row, col].flagged = true;
-                    }
-                    else
-                    {
-                        cell[row, col].flagged = false;
-                    }
                 }
             }
         }

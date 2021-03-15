@@ -28,11 +28,14 @@ namespace MineSweeperCloudEdition.Controllers
             // Creates a 2d array of cells
             cells = new Cell[size, size];
             cellList = new List<Cell>();
+            int k = 0;
            for(int row = 0; row<size; row++)
             {
                 for(int col = 0; col<size; col++)
                 {
                     cells[row, col] = new Cell(row,col);
+                    cells[row, col].Id = k;
+                    k++;
                 }
             }
            // Sets the bomb cells to active
@@ -50,55 +53,46 @@ namespace MineSweeperCloudEdition.Controllers
             return View("Board", cellList);
         }
 
-        public IActionResult RightClick(int index)
+        //public IActionResult RightClick(int index)
+        //{
+        //    // Change flagged property of selected cell
+        //    cellList.ElementAt(index).flagged = !cellList.ElementAt(index).flagged;
+        //    //return to view
+        //    return View("Board", cellList);
+        //}
+
+        public IActionResult OneButton(int index)
         {
-            int size = (int)Math.Sqrt(cells.Length);
-            // grab selected cell
-            Cell cell = cellList.ElementAt(index);
-            //call flagBomb methond
-            if(cell.flagged == false)
-            {
-                cell.flagged = true;
-            }
-            else if(cell.flagged == true)
-            {
-                cell.flagged = false;
-            }
+            // Change flagged property of selected cell
+            cellList.ElementAt(index).flagged = !cellList.ElementAt(index).flagged;
             //return to view
-           cellList = new List<Cell>();
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    cellList.Add(cells[i, j]);
-                }
-            }
-            return View("Board", cellList);
+            return PartialView(cellList.ElementAt(index));
         }
+
         public IActionResult HandleButtonClick(int index)
         {
             // set the size of the board
             int size = (int)Math.Sqrt(cells.Length);
             // selects the cell out of the cell list
-            Cell cell = cellList.ElementAt(index);
+            //Cell cell = cellList.ElementAt(index);
             MouseEventArgs me = new MouseEventArgs();
             if (me.Button.Equals(0))
             {
                 // Left click
                 // check if the cell is a bomb
-                if (cell.live != true && cell.liveNeighbors <= 1)
+                if (cellList.ElementAt(index).live != true && cellList.ElementAt(index).liveNeighbors <= 1)
                 {
                     // Call the Flood Fill method
-                    cb.floodFill(cells, cell.row, cell.col, size);
+                    cb.floodFill(cells, cellList.ElementAt(index).row, cellList.ElementAt(index).col, size);
                 }
-                else if (cell.liveNeighbors > 1)
+                else if (cellList.ElementAt(index).liveNeighbors > 1)
                 {
-                    cell.visited = true;
+                    cellList.ElementAt(index).visited = true;
                 }
-                else if (cell.live == true)
+                else if (cellList.ElementAt(index).live == true)
                 {
                     // set visited to true to reveal the bomb
-                    cell.visited = true;
+                    cellList.ElementAt(index).visited = true;
                     lose = true;
                 }
             }
@@ -111,14 +105,6 @@ namespace MineSweeperCloudEdition.Controllers
             {
                 // reveals the board after a loss
                 cb.revealBoard(cells, size);
-                cellList = new List<Cell>();
-                for (int i = 0; i < size; i++)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        cellList.Add(cells[i, j]);
-                    }
-                }
                 // Lose statement
                 ViewBag.win = "BOOM! You set off a bomb! You Lose!";
             }
