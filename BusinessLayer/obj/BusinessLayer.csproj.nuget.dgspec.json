@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {}
+    "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\dandr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\BusinessLayer\\obj\\",
+        "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\anoth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,11 +28,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj": {
-                "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj"
+              "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj": {
+                "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj"
               }
             }
           }
@@ -67,24 +64,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\dandr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\anoth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anoth\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -135,15 +129,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj": {
+    "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj",
+        "projectUniqueName": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj",
         "projectName": "MIlestone1Library",
-        "projectPath": "C:\\Users\\dandr\\source\\repos\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj"
+        "projectPath": "C:\\Users\\anoth\\Documents\\GitHub\\MineSweeperCloudEdition\\MIlestone1Library\\MIlestone1Library.csproj"
       },
       "frameworks": {
         "net472": {}

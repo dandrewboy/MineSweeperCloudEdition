@@ -280,3 +280,4 @@ C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\
 C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\Razor\Views\Board\Board.cshtml.g.cs
 C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\Razor\Views\Board\Index.cshtml.g.cs
 C:\Users\dandr\source\repos\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\Razor\Views\Board\OneButton.cshtml.g.cs
+C:\Users\anoth\Documents\GitHub\MineSweeperCloudEdition\MineSweeperCloudEdition\obj\Debug\net5.0\Razor\Views\Board\OneButton.cshtml.g.cs
