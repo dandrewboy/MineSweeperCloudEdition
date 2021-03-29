@@ -1,6 +1,7 @@
 ﻿using MIlestone1Library;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace BusinessLayer
 {
@@ -8,6 +9,7 @@ namespace BusinessLayer
     public class CreateBoard
     {
         List<Cell> bombSet = new List<Cell>();
+        Stopwatch stopWatch = new Stopwatch();
         // sets cells to be bombs 
         public void setLiveNeighbors(Cell[,] theGrid, int Size, int difficulty)
         {
@@ -335,6 +337,24 @@ namespace BusinessLayer
                     cell[row, col].visited = true;
                 }
             }
+        }
+
+        public void startTimer()
+        {
+            stopWatch.Start();
+        }
+
+        public string stopTimer()
+        {
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+
+            return elapsedTime;
         }
     }
 }

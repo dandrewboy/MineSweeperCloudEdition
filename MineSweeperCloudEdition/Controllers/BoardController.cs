@@ -1,7 +1,9 @@
 ﻿using BusinessLayer;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MIlestone1Library;
+using MineSweeperCloudEdition.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +18,11 @@ namespace MineSweeperCloudEdition.Controllers
         public static Cell[,] cells;
         public static List<Cell> cellList;
         CreateBoard cb = new CreateBoard();
+        string endTime;
+        int clickCount;
         bool win;
         bool lose;
+        
 
         public IActionResult Index()
         {
@@ -50,6 +55,7 @@ namespace MineSweeperCloudEdition.Controllers
                     cellList.Add(cells[i, j]);
                 }
             }
+            cb.startTimer();
             return View("Board", cellList);
         }
 
@@ -78,6 +84,7 @@ namespace MineSweeperCloudEdition.Controllers
             MouseEventArgs me = new MouseEventArgs();
             if (me.Button.Equals(0))
             {
+                clickCount++;
                 // Left click
                 // check if the cell is a bomb
                 if (cellList.ElementAt(index).live != true && cellList.ElementAt(index).liveNeighbors <= 1)
@@ -94,12 +101,22 @@ namespace MineSweeperCloudEdition.Controllers
                     // set visited to true to reveal the bomb
                     cellList.ElementAt(index).visited = true;
                     lose = true;
+                    endTime = cb.stopTimer();
+                    int UserID = Convert.ToInt32(HttpContext.Session.GetString("_Id"));
+                    ResultData resultData = new ResultData();
+                    ResultsDTO rDTO = new ResultsDTO(UserID, 1, endTime, clickCount);
+                    resultData.addResult(rDTO);
                 }
             }
             // checks for win condition
             if(cb.boardCheck(cells, size) == true)
             {
                 win = true;
+                endTime = cb.stopTimer();
+                int UserID = Convert.ToInt32(HttpContext.Session.GetString("_Id"));
+                ResultData resultData = new ResultData();
+                ResultsDTO rDTO = new ResultsDTO(UserID, 1, endTime, clickCount);
+                resultData.addResult(rDTO);
             }
             if(lose == true)
             {

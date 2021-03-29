@@ -5,12 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace MineSweeperCloudEdition.Controllers
 {
     public class PlayerController : Controller
     {
         PlayerData playerDAL = new PlayerData();
+        public const string SessionKeyId = "_Id";
+        public string SessionInfo_Id { get; private set; }
+
         public IActionResult Index()
         {
             return RedirectToAction("Index", "Home");
@@ -54,6 +58,7 @@ namespace MineSweeperCloudEdition.Controllers
             else
             {
                 ViewBag.Message = "Login Successful!"; //Will not show in time because of redirect
+                HttpContext.Session.SetInt32(SessionKeyId, objPlayer.PlayerID);
                 return RedirectToAction("Index", "Home");
             }
             return View();

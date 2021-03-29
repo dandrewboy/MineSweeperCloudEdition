@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MineSweeperCloudEdition.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -69,6 +70,57 @@ namespace DataAccessLayer
                     cmd.Parameters.AddWithValue("@Address", ply.Address);
                     cmd.Parameters.AddWithValue("@State", ply.State);
                     cmd.Parameters.AddWithValue("@Email", ply.Email);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+            return isSuccessful;
+        }
+
+        public IEnumerable<ResultsDTO> GetAllResults()
+        {
+            List<ResultsDTO> rList = new List<ResultsDTO>();
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_GetAllResults", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        ResultsDTO rDTO = new ResultsDTO();
+                        try
+                        {
+                            rDTO.PlayerId = Convert.ToInt32(dataReader["EmployeeID"].ToString());
+                        }
+                        catch
+                        {
+                            rDTO.PlayerId = 0;
+                        }
+                        rDTO.Results = Convert.ToInt32(dataReader["Results"].ToString());
+                        rDTO.Time = dataReader["Time"].ToString();
+                        rDTO.Clicks = Convert.ToInt32(dataReader["Clicks"].ToString());
+                    }
+                }
+                conn.Close();
+            }
+            return rList;
+        }
+        public bool AddResult(ResultsDTO rDTO)
+        {
+            bool isSuccessful = true;
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_InsertResult", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PlayerId", rDTO.PlayerId);
+                    cmd.Parameters.AddWithValue("@Result", rDTO.Results);
+                    cmd.Parameters.AddWithValue("@Time", rDTO.Time);
+                    cmd.Parameters.AddWithValue("@Clicks", rDTO.Clicks);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using MineSweeperCloudEdition.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,5 +43,18 @@ namespace BusinessLayer
             }
             return isSuccessful;
         }
+        public bool addResult(ResultsDTO rDTO)
+        {
+            DatabaseManager addOneResult = new DatabaseManager();
+            bool isSuccesful = addOneResult.AddResult(rDTO);
+            return isSuccesful;
+        }
+        public IEnumerable<ResultsDTO> GetAllResults()
+        {
+            DatabaseManager dbReadAllResults = new DatabaseManager();
+            IEnumerable<ResultsDTO> allResults = dbReadAllResults.GetAllResults();
+            return allResults;
+        }
+
     }
 }
