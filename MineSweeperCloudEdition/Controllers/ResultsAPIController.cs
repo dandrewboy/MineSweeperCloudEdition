@@ -13,7 +13,7 @@ namespace MineSweeperCloudEdition.Controllers
     [Route("api/[controller]")]
     public class ResultsAPIController : ControllerBase
     {
-        DatabaseComs resultData = new DatabaseComs();
+        ResultData resultData = new ResultData();
 
         [HttpGet]
         [ResponseType(typeof(List<ResultsDTO>))]
@@ -21,7 +21,7 @@ namespace MineSweeperCloudEdition.Controllers
         {
             IEnumerable<ResultsDTO> resultList = resultData.GetAllResults();
 
-            IEnumerable<ResultsDTO> ResultDTOList = from p in resultList where p.Results == 1 select new ResultsDTO(p.PlayerId, p.Results, p.Time, p.Clicks);
+            IEnumerable<ResultsDTO> ResultDTOList = from p in resultList.OrderByDescending(p=>p.Results).ThenBy(p=>p.Time) select new ResultsDTO(p.PlayerId, p.Results, p.Time, p.Clicks);
 
             return ResultDTOList;
         }

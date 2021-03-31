@@ -14,7 +14,7 @@ namespace MineSweeperCloudEdition.Models
             resultsDAL.addResult(rDTO);
         }
 
-        public IEnumerable<ResultsDTO> GetAllPlayers()
+        public IEnumerable<ResultsDTO> GetAllResults()
         {
             IEnumerable<ResultsDTO> allResults = resultsDAL.GetAllResults();
             return allResults;

@@ -94,15 +94,16 @@ namespace DataAccessLayer
                         ResultsDTO rDTO = new ResultsDTO();
                         try
                         {
-                            rDTO.PlayerId = Convert.ToInt32(dataReader["EmployeeID"].ToString());
+                            rDTO.PlayerId = Convert.ToInt32(dataReader["PlayerId"].ToString());
                         }
                         catch
                         {
                             rDTO.PlayerId = 0;
                         }
-                        rDTO.Results = Convert.ToInt32(dataReader["Results"].ToString());
+                        rDTO.Results = Convert.ToInt32(dataReader["Result"].ToString());
                         rDTO.Time = dataReader["Time"].ToString();
                         rDTO.Clicks = Convert.ToInt32(dataReader["Clicks"].ToString());
+                        rList.Add(rDTO);
                     }
                 }
                 conn.Close();
