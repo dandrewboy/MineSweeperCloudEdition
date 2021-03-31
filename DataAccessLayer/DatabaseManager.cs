@@ -31,7 +31,7 @@ namespace DataAccessLayer
                         Player ply = new Player();
                         try
                         {
-                            ply.PlayerID = Convert.ToInt32(dataReader["EmployeeID"].ToString());
+                            ply.PlayerID = Convert.ToInt32(dataReader["PlayerID"].ToString());
                         }
                         catch
                         {
@@ -129,5 +129,115 @@ namespace DataAccessLayer
             }
             return isSuccessful;
         }
+
+        public bool CheckSave(int playerID, string str)
+        {
+            bool returning;
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_SelectGAMEWhere", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PlayerID", playerID);
+                    conn.Open();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    if (dataReader.Read())
+                    {
+                        returning = true;
+                    }
+                    else
+                    {
+                        returning = false;
+                    }
+                }
+                conn.Close();
+            }
+            if (str.Equals("insert"))
+            {
+                CheckSaveOverwrite(returning, playerID);
+            }
+            return returning;
+        }
+
+        public void CheckSaveOverwrite(bool overwrite, int playerID)
+        {
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                if (overwrite == true)
+                {
+                    using (SqlCommand cmd = new SqlCommand("usp_DeleteGameData", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@PlayerID", playerID);
+                        conn.Open();
+                        cmd.ExecuteReader();
+                    }
+                }
+                conn.Close();
+            }
+        }
+
+        public void SaveGame(List<GameDTO> gameData, int PlayerId)
+        {
+            CheckSave(PlayerId,"insert");
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                foreach (GameDTO cdto in gameData)
+                {
+                    using (SqlCommand cmd = new SqlCommand("usp_InsertGameDTO", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Id", cdto.Id);
+                        cmd.Parameters.AddWithValue("@row", cdto.row);
+                        cmd.Parameters.AddWithValue("@col", cdto.col);
+                        cmd.Parameters.AddWithValue("@visited", cdto.visited);
+                        cmd.Parameters.AddWithValue("@live", cdto.live);
+                        cmd.Parameters.AddWithValue("@flagged", cdto.flagged);
+                        cmd.Parameters.AddWithValue("@liveNeighbors", cdto.liveNeighbors);
+                        cmd.Parameters.AddWithValue("@playerId", cdto.PlayerId);
+                        cmd.Parameters.AddWithValue("@time", cdto.Time);
+                        cmd.Parameters.AddWithValue("@clicks", cdto.Clicks);
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+            }
+        }
+
+        public List<GameDTO> LoadGame(int PlayerId)
+        {
+            List<GameDTO> gameList = new List<GameDTO>();
+            using (SqlConnection conn = new SqlConnection(dbConnection))
+            {
+                using (SqlCommand cmd = new SqlCommand("usp_SelectGAMEWhere", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PlayerID", PlayerId);
+                    conn.Open();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        GameDTO cdto = new GameDTO();
+                        cdto.Id = Convert.ToInt32(dataReader["Id"].ToString());
+                        cdto.row = Convert.ToInt32(dataReader["Row"].ToString());
+                        cdto.col = Convert.ToInt32(dataReader["Col"]);
+                        cdto.visited = Convert.ToBoolean(dataReader["Visited"].ToString());
+                        cdto.live = Convert.ToBoolean(dataReader["Live"].ToString());
+                        cdto.flagged = Convert.ToBoolean(dataReader["Flagged"].ToString());
+                        cdto.liveNeighbors = Convert.ToInt32(dataReader["LiveNeighbors"].ToString());
+                        cdto.PlayerId = Convert.ToInt32(dataReader["PlayerId"].ToString());
+                        cdto.Time = dataReader["Time"].ToString();
+                        cdto.Clicks = Convert.ToInt32(dataReader["Clicks"].ToString());
+                        gameList.Add(cdto);
+                    }
+                }
+                conn.Close();
+            }
+            return gameList;
+        }
+
+
+        
     }
 }

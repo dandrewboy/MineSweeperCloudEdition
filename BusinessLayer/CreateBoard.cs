@@ -10,6 +10,8 @@ namespace BusinessLayer
     {
         List<Cell> bombSet = new List<Cell>();
         Stopwatch stopWatch = new Stopwatch();
+        //to store the saved time from loading a saved game.
+        TimeSpan savedProgressTime;
         // sets cells to be bombs 
         public void setLiveNeighbors(Cell[,] theGrid, int Size, int difficulty)
         {
@@ -277,11 +279,11 @@ namespace BusinessLayer
         public void flagBomb(Cell cell)
         {
             // Set the cells flagged propperty depending on its current state
-           if(cell.flagged == false)
+            if (cell.flagged == false)
             {
                 cell.flagged = true;
-            } 
-            else if(cell.flagged == true)
+            }
+            else if (cell.flagged == true)
             {
                 cell.flagged = false;
             }
@@ -299,7 +301,7 @@ namespace BusinessLayer
                 return false;
             }
         }
-        public  void floodFill(Cell[,] cells, int r, int c, int size)
+        public void floodFill(Cell[,] cells, int r, int c, int size)
         {
             // Calls the is valid method to check if the target cell is inside the board
             if (isValid(r, c, size) && cells[r, c].live == false && cells[r, c].visited == false && cells[r, c].liveNeighbors <= 1)
@@ -313,14 +315,14 @@ namespace BusinessLayer
                 floodFill(cells, r, c - 1, size);
             }
         }
-        public bool boardCheck(Cell[,] cell, int size)
+        public bool boardCheck(Cell[,] cells, int size)
         {
             for (int r = 0; r < size; r++)
             {
                 for (int c = 0; c < size; c++)
                 {
                     // checks to see if any non-bomb cells are not vivited yet
-                    if (cell[r, c].live == false && cell[r, c].visited == false)
+                    if (cells[r, c].live == false && cells[r, c].visited == false)
                     {
                         return false;
                     }
@@ -328,13 +330,14 @@ namespace BusinessLayer
             }
             return true;
         }
-        public void revealBoard(Cell[,] cell, int size)
+        public void revealBoard(Cell[,] cells, int size)
         {
             // revelas all the cells
-            for (int row = 0; row < size; row++) {
-                for(int col = 0; col < size; col++)
+            for (int row = 0; row < size; row++)
+            {
+                for (int col = 0; col < size; col++)
                 {
-                    cell[row, col].visited = true;
+                    cells[row, col].visited = true;
                 }
             }
         }
@@ -344,17 +347,27 @@ namespace BusinessLayer
             stopWatch.Start();
         }
 
+        public void addElapsedTime(TimeSpan t)
+        {
+            savedProgressTime = t;
+        }
+
         public string stopTimer()
         {
             stopWatch.Stop();
+            stopWatch.Elapsed.Add(savedProgressTime);
             TimeSpan ts = stopWatch.Elapsed;
-
             // Format and display the TimeSpan value.
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}:{3:00}.{4:00}",
+                ts.Days, ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
 
             return elapsedTime;
+        }
+
+        public void resetTimer()
+        {
+            stopWatch.Reset();
         }
     }
 }

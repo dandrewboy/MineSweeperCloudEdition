@@ -14,10 +14,10 @@ namespace MineSweeperCloudEdition.Models
 
         public ResultsDTO(int playerId, int results, string time, int clicks)
         {
-            PlayerId = playerId;
-            Results = results;
-            Time = time;
-            Clicks = clicks;
+            this.PlayerId = playerId;
+            this.Results = results;
+            this.Time = time;
+            this.Clicks = clicks;
         }
 
         public ResultsDTO()

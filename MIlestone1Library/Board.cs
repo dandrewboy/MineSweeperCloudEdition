@@ -11,7 +11,6 @@ namespace MIlestone1Library
     {
         public int Size { get; set; }
         public Cell[,] theGrid;
-        
 
         public Board(int s)
         {

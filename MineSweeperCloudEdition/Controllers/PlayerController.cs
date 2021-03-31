@@ -14,10 +14,11 @@ namespace MineSweeperCloudEdition.Controllers
         PlayerData playerDAL = new PlayerData();
         public const string SessionKeyId = "_Id";
         public string SessionInfo_Id { get; private set; }
+        static Player playerOBJ;
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Player");
         }
 
         [HttpGet]
@@ -59,8 +60,54 @@ namespace MineSweeperCloudEdition.Controllers
             {
                 ViewBag.Message = "Login Successful!"; //Will not show in time because of redirect
                 HttpContext.Session.SetInt32(SessionKeyId, objPlayer.PlayerID);
-                return RedirectToAction("Index", "Home");
+                playerOBJ = objPlayer;
+                return View("Dashboard", objPlayer);
             }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Dashboard()
+        {
+            var User = HttpContext.Session.GetInt32("_Id");
+            if (User.HasValue)
+            {
+                return View(playerOBJ);
+            }
+            else
+            return RedirectToAction("Index", "Player");
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            playerOBJ = null;
+            return RedirectToAction("Index", "Player");
+        }
+
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return View(playerOBJ);
+        }
+
+        [HttpPost]
+        public IActionResult Edit([Bind] Player objPlayer)
+        {
+            /*playerDAL.ValidatePlayer(objPlayer);
+            if (objPlayer.PlayerID == -1)
+            {
+                ViewBag.Message = "Login Failed!"; //Does show up :)
+            }
+            else
+            {
+                ViewBag.Message = "Login Successful!"; //Will not show in time because of redirect
+                HttpContext.Session.SetInt32(SessionKeyId, objPlayer.PlayerID);
+                playerOBJ = objPlayer;
+                return View("Dashboard", objPlayer);
+            }*/
             return View();
         }
     }

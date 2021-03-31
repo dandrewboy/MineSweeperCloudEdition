@@ -37,6 +37,16 @@ namespace BusinessLayer
                 {
                     if (p.Password == ply.Password)
                     {
+                        ply.PlayerID = p.PlayerID;
+                        ply.Firstname = p.Firstname;
+                        ply.Lastname = p.Lastname;
+                        ply.Username = p.Username;
+                        ply.Password = p.Password;
+                        ply.Email = p.Email;
+                        ply.Gender = p.Gender;
+                        ply.Age = p.Age;
+                        ply.State = p.State;
+                        ply.Address = p.Address;
                         isSuccessful = true;
                     }
                 }
@@ -54,6 +64,23 @@ namespace BusinessLayer
             DatabaseManager dbReadAllResults = new DatabaseManager();
             IEnumerable<ResultsDTO> allResults = dbReadAllResults.GetAllResults();
             return allResults;
+        }
+
+        public List<GameDTO> LoadGame(int PlayerID)
+        {
+            DatabaseManager resumeGame = new DatabaseManager();
+            return resumeGame.LoadGame(PlayerID);
+        }
+        public void SaveGame(List<GameDTO> gameData, int playerId)
+        {
+            DatabaseManager GameDB = new DatabaseManager();
+            GameDB.SaveGame(gameData, playerId);
+        }
+
+        public bool CheckSave(int playerID, string str)
+        {
+            DatabaseManager GameDB = new DatabaseManager();
+            return GameDB.CheckSave(playerID, str);
         }
 
     }

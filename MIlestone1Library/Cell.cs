@@ -21,8 +21,5 @@ namespace MIlestone1Library
             row = r;
             col = c;
         }
-
-
-
     }
 }

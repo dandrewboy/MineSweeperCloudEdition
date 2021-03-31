@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Description;
 
 namespace MineSweeperCloudEdition.Controllers
 {
@@ -20,7 +21,7 @@ namespace MineSweeperCloudEdition.Controllers
         {
             IEnumerable<ResultsDTO> resultList = resultData.GetAllResults();
 
-            IEnumerable<ResultsDTO> ResultDTOList = from p in resultList select new ResultsDTO(p.PlayerId, p.Results, p.Time, p.Clicks);
+            IEnumerable<ResultsDTO> ResultDTOList = from p in resultList where p.Results == 1 select new ResultsDTO(p.PlayerId, p.Results, p.Time, p.Clicks);
 
             return ResultDTOList;
         }
