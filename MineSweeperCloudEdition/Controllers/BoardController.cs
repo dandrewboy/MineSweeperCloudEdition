@@ -26,6 +26,7 @@ namespace MineSweeperCloudEdition.Controllers
 
         public IActionResult Index()
         {
+            //checks if user session is set or not, and if not, we determine its an unauthorized user.
             var User = HttpContext.Session.GetInt32("_Id");
             if (User.HasValue)
             {
@@ -47,23 +48,26 @@ namespace MineSweeperCloudEdition.Controllers
                 return RedirectToAction("Index", "Player");
             }
 
+            //from button index, get btnval.
             if (btnVal.Equals("Load Game"))
             {
                 GameData gd = new GameData();
-                if (gd.CheckSave(UserID, "") == true)
+                if (gd.CheckSave(UserID, "") == true) //if user has a game stored in the database that we should resume.
                 {
+                    //Code to load in game.
                     List<GameDTO> game = gd.LoadGame(UserID);
                     int boardSize = (int)Math.Sqrt(game.Count);
                     cells = new Cell[boardSize, boardSize];
                     cellList = new List<Cell>();
                     bool gameover = false;
-                    // Yeah theres a bug that we use linq to fix :)
+                    // Theres a bug with game sql inserting not in order before this so we use linq to fix it :)
                     List<GameDTO> fixIdOrder = new List<GameDTO>();
                     int counter = 0;
                     while (counter < game.Count)
                     {
+                        //while we re-add board count starting from 0 (going in order)
                         foreach (GameDTO gdto in game)
-                        {
+                        { //find id of counter so we can add that gamedto and cell data in order.
                             if(gdto.Id == counter)
                             {
                                 fixIdOrder.Add(gdto);
@@ -71,6 +75,7 @@ namespace MineSweeperCloudEdition.Controllers
                             }
                         }
                     }
+                    //need to set cells otherwise a nullable object error comes up.
                     for (int row = 0; row < boardSize; row++)
                     {
                         for (int col = 0; col < boardSize; col++)
@@ -90,6 +95,7 @@ namespace MineSweeperCloudEdition.Controllers
                             }
                         }
                     }
+                    //take out the cell of our gamedto and add it to cell list.
                     foreach (GameDTO gdto in fixIdOrder)
                     {
                         Cell imp = new Cell(gdto.row, gdto.col);
@@ -101,6 +107,7 @@ namespace MineSweeperCloudEdition.Controllers
                         cellList.Add(imp);
                         cb.addElapsedTime(TimeSpan.Parse(gdto.Time));
                         clickCount = gdto.Clicks;
+                        //a quick calculation if game is already over. may change logic later.
                         if (imp.visited == true && imp.live)
                         {
                             gameover = true;
@@ -114,6 +121,7 @@ namespace MineSweeperCloudEdition.Controllers
                 }
                 else
                 {
+                    //if there is no game saved, we create a new game. 
                     btnVal = "New Game";
                 }
             }
@@ -160,6 +168,10 @@ namespace MineSweeperCloudEdition.Controllers
         //    return View("Board", cellList);
         //}
 
+        /// <summary>
+        /// takes all the variables needed to resume the game, puts them into a dto and uploads to database.
+        /// </summary>
+        /// <returns>view</returns>
         public IActionResult SaveGame()
         {
             GameData gd = new GameData();

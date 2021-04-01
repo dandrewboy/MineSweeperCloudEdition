@@ -349,6 +349,7 @@ namespace BusinessLayer
 
         public void addElapsedTime(TimeSpan t)
         {
+            //setter
             savedProgressTime = t;
         }
 

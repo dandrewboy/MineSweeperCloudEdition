@@ -58,7 +58,7 @@ namespace MineSweeperCloudEdition.Controllers
             else
             {
                 ViewBag.Message = "Login Successful!"; //Will not show in time because of redirect
-                HttpContext.Session.SetInt32(SessionKeyId, objPlayer.PlayerID);
+                HttpContext.Session.SetInt32(SessionKeyId, objPlayer.PlayerID); //set the session var
                 playerOBJ = objPlayer;
                 return View("Dashboard", objPlayer);
             }
@@ -68,6 +68,7 @@ namespace MineSweeperCloudEdition.Controllers
         [HttpGet]
         public IActionResult Dashboard()
         {
+            //checks if user session is set or not, and if not, we determine its an unauthorized user.
             var User = HttpContext.Session.GetInt32("_Id");
             if (User.HasValue)
             {
@@ -80,6 +81,7 @@ namespace MineSweeperCloudEdition.Controllers
         [HttpGet]
         public IActionResult Logout()
         {
+            //clears session so player can set new session.
             HttpContext.Session.Clear();
             playerOBJ = null;
             return RedirectToAction("Index", "Player");
@@ -92,6 +94,7 @@ namespace MineSweeperCloudEdition.Controllers
             return View(playerOBJ);
         }
 
+        //will implement user account update next milestone
         [HttpPost]
         public IActionResult Edit([Bind] Player objPlayer)
         {
