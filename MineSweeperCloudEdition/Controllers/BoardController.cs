@@ -26,7 +26,13 @@ namespace MineSweeperCloudEdition.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var User = HttpContext.Session.GetInt32("_Id");
+            if (User.HasValue)
+            {
+                return View();
+            }
+            else
+                return RedirectToAction("Index", "Player");
         }
         public IActionResult Board(int size, int difficulty, string btnVal)
         {
@@ -194,8 +200,8 @@ namespace MineSweeperCloudEdition.Controllers
             MouseEventArgs me = new MouseEventArgs();
             var User = HttpContext.Session.GetInt32("_Id");
             UserID = (int)User;
-            if (cellList.ElementAt(index).visited == false)
-            {
+            //if (cellList.ElementAt(index).visited == false)
+            //{
                 if (me.Button.Equals(0))
                 {
                     clickCount++;
@@ -243,7 +249,7 @@ namespace MineSweeperCloudEdition.Controllers
                     // win statement
                     ViewBag.win = "All Bomb Locations Identified! You Win!";
                 }
-            }
+            //}
             return View("Board", cellList);
         }
     }

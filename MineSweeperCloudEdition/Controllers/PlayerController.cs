@@ -13,7 +13,6 @@ namespace MineSweeperCloudEdition.Controllers
     {
         PlayerData playerDAL = new PlayerData();
         public const string SessionKeyId = "_Id";
-        public string SessionInfo_Id { get; private set; }
         static Player playerOBJ;
 
         public IActionResult Index()
