@@ -160,13 +160,7 @@ namespace MineSweeperCloudEdition.Controllers
             return View("Board", cellList);
         }
 
-        //public IActionResult RightClick(int index)
-        //{
-        //    // Change flagged property of selected cell
-        //    cellList.ElementAt(index).flagged = !cellList.ElementAt(index).flagged;
-        //    //return to view
-        //    return View("Board", cellList);
-        //}
+        
 
         /// <summary>
         /// takes all the variables needed to resume the game, puts them into a dto and uploads to database.
@@ -216,6 +210,7 @@ namespace MineSweeperCloudEdition.Controllers
             //{
                 if (me.Button.Equals(0))
                 {
+                    cellList.ElementAt(index).flagged = false;
                     clickCount++;
                     // Left click
                     // check if the cell is a bomb

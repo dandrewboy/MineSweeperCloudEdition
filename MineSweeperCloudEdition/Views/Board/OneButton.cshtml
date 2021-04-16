@@ -5,14 +5,14 @@
 @if (Model.flagged == true)
 {
     @*Defines the indavidual buttons and attaches a method for handling click events*@
-    <button class="game-button" type="submit" value="@Model.Id" name="index" asp-controller="Board" asp-action="RightClick">
+    <button class="game-button" type="submit" value="@Model.Id" name="index" asp-controller="Board" asp-action="HandleButtonClick">
         <img class="game-button-image" src="~/img/flag.png" />
     </button>
 }
 else
 {
     @*Defines the indavidual buttons and attaches a method for handling click events*@
-    <button class="game-button" type="submit" value="@Model.Id" name="index" asp-controller="Board" asp-action="RightClick">
+    <button class="game-button" type="submit" value="@Model.Id" name="index" asp-controller="Board" asp-action="HandleButtonClick">
         <img class="game-button-image" src="~/img/minesweeper.jpg" />
     </button>
 }

@@ -3,13 +3,15 @@
 
 // Write your JavaScript code.
 
-$(function () {
+$(function ()
+{
     console.log("Page is ready.");
 
-    $(document).on("click", ".game-button", function (event) {
-        document.on("click", ".game-button").disabled = true;
+    $(document).on("click", ".game-button", function (event)
+    {
+        $(document).on("click", ".game-button").disabled = true;
         event.preventDefault();
-
+        
         var index = $(this).val();
         console.log("Button number " + index + " was clicked");
         doButtonUpdate(index, "/Board/HandleButtonClick");
@@ -19,8 +21,10 @@ $(function () {
 $(document).ready(function () {
 
     $("table").contextmenu = function () { return false; };
-    $(document).on("mousedown", ".game-button", function (e) {
-        if (e.button == 2) {
+    $(document).on("mousedown", ".game-button", function (e)
+    {
+        if (e.button == 2)
+        {
             var index = $(this).val();
             console.log("Right Mouse Click: " + index);
             doOneButtonUpdate(index, "/Board/OneButton");
