@@ -6,6 +6,7 @@ using System.Text;
 
 namespace BusinessLayer
 {
+    //passes data from the objectdata classes, to the data access layer.
     public class DatabaseComs
     {
         public IEnumerable<Player> GetAllPlayers()

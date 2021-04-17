@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace MIlestone1Library
 {
+    //Cell model class
     public class Cell
     {
+        //properties define an individual cell
         public int Id { get; set; }
         public int row { get; set; }
         public int col { get; set; }

@@ -8,6 +8,7 @@ namespace MineSweeperCloudEdition.Models
 {
     public class ResultData
     {
+        //business layer class that pass data between the controller and database communications layer.
         DatabaseComs resultsDAL = new DatabaseComs();
         public void addResult(ResultsDTO rDTO)
         {

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MineSweeperCloudEdition.Models
 {
+    //Board model for our view
     public class BoardModel
     {
         [Required]

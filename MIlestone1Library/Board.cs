@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace MIlestone1Library
 {
+    //Board class that is defined by a 2d cell array.
     public class Board
     {
+        //board properties
         public int Size { get; set; }
         public Cell[,] theGrid;
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace MineSweeperCloudEdition.Models
 {
+    //session class to establish user authentification.
     public class Session
     {
         public int CurrentUserId { get; set; }

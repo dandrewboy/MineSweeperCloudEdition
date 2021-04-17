@@ -9,6 +9,7 @@ namespace DataAccessLayer
 {
     public class DatabaseManager
     {
+        //db connection string
         public string dbConnection { get; set; }
 
         public DatabaseManager()

@@ -9,6 +9,7 @@ namespace MineSweeperCloudEdition.Models
 {
     public class GameData
     {
+        //business layer class that pass data between the controller and database communications layer.
         DatabaseComs gameDAL = new DatabaseComs();
         public List<GameDTO> LoadGame(int PlayerID)
         {

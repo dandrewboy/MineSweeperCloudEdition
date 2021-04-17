@@ -5,8 +5,10 @@ using System.Text;
 
 namespace DataAccessLayer
 {
+    //Player model for our user.
     public class Player
     {
+        //properties
         public int PlayerID { get; set; }
 
         [Required]

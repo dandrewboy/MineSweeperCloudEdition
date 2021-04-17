@@ -7,6 +7,7 @@ namespace MineSweeperCloudEdition.Models
 {
     public class GameDTO
     {
+        //properties
         public int Id { get; set; }
         public int row { get; set; }
         public int col { get; set; }
@@ -20,8 +21,9 @@ namespace MineSweeperCloudEdition.Models
 
         public GameDTO()
         {
-        }
 
+        }
+        //constructor for our data transfer object
         public GameDTO(int id, int row, int col, bool visited, bool live, bool flagged, int liveNeighbors, int playerId, string time, int clicks)
         {
             Id = id;
