@@ -1,2 +1,3 @@
-#Minesweeper as a Web Application
+# Minesweeper as a Web Application
+
 Project by Brian and Dominic.
