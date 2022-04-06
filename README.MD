@@ -1,3 +1,3 @@
-# Minesweeper as a Web Application
+# Minesweeper as a ASP.NET Web Application
 
 Project by Brian and Dominic.
